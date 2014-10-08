@@ -158,7 +158,7 @@ head.ready(function() {
 
         function showRemaining() {
             var now = new Date();
-            now.setMinutes(1);
+            //now.setMinutes(1);
             var distance = end - now;
             var days = Math.floor(distance / _day);
             if (days < 10) days = '0' + days;
