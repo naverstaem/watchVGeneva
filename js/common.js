@@ -43,6 +43,10 @@ head.ready(function() {
             overlay: {
                 locked: false
             }
+        },
+        beforeShow: function(){
+            $(".fancybox-skin").css("backgroundColor","transparent");
+            $(".fancybox-skin").css("boxShadow","none");
         }
     });
 
