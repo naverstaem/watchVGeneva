@@ -148,7 +148,7 @@ header
   display: none
   height: 60px
   +box
-  background: rgba(rgb(0,0,0), 0.8)
+  background: rgba(#ccc, 0.8)
   .top
     height: 0
 
@@ -367,7 +367,7 @@ header
       +s(review_popup)
 
     h3
-      color: #554628
+      color: #1e1e1e
       font-size: 18px
       font-family: 'georgiaitalic'
       text-transform: uppercase
@@ -375,7 +375,7 @@ header
       font-weight: normal
     p
       +pfl
-      color: #554628
+      color: #1e1e1e
       font-size: 16px
 
 
@@ -406,6 +406,7 @@ header
     position: absolute
     bottom: -89px
     left: -50px
+    z-index: 1
     img
       display: block
 
@@ -523,20 +524,18 @@ header
       float: right
       margin-top: 22px
       margin-right: 50px
-
-
+  &__text
+    padding: 20px 15px 0
+    font-size: 16px
+    color: #787878
+    text-align: left
   &__form
-    margin-top: 25px
+    margin-top: 5px
     input
       width: 250px
       margin-bottom: 10px
     .button
       padding: 0 68px
-
-
-
-
-
 
 
 
@@ -551,15 +550,15 @@ header
 
 footer
   box-sizing: border-box
-  height: 90px
+  height: 100px
   @extend %in
   text-align: center
-  padding-top: 15px
+  padding-top: 20px
   p
     font-size: 16px
     color: #787878
     a
-      color: #be0a0a
+      color: #be1e1e
       &:hover
         text-decoration: none
 
