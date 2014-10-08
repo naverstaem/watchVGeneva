@@ -1,0 +1,425 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
+
+//body
+//  font-family: Arial, sans-serif
+//  font-size: 12px
+//  line-height: 1.4
+=pfl
+  font-family: "Conv_PFDinTextCondPro-Light"
+  font-weight: normal
+  font-style: normal
+
+input.error, textarea.error
+  box-shadow: inset 0 0 10px red !important
+label.error
+  display: none !important
+
+
+.icon
+  display: inline-block
+  position: relative
+
+body
+  font-size: 16px
+  line-height: 1.4
+  background-color: #fff
+  color: #1e1e1e
+  +pfl
+.out
+  position: relative
+input, textarea
+  +placeholder
+    font-size: 16px
+    color: #787878
+    +pfl
+%in
+  max-width: 1200px
+  width: 1000px
+  margin-left: auto
+  margin-right: auto
+
+.myFancyClose
+  position: absolute
+  top: -17px
+  right: -18px
+
+.btn
+  display: inline-block
+  +border-radius(16px)
+  +background-clip(padding-box)
+  padding: 8px 25px
+  color: #504b41
+  font-size: 18px
+  border: solid 2px #ffffff
+  text-decoration: underline
+  +transition(background, .5s)
+  &:hover
+    color: #504b41
+    background-color: lighten(white, 10%)
+.title
+  text-align: center
+  font-size: 48px
+  font-family: 'georgiaitalic'
+  line-height: .8em
+  color: #504b41
+  text-transform: uppercase
+  font-weight: normal
+  position: relative
+  span
+    font-size: 36px
+
+
+
+
+
+
+.counter
+  width: 285px
+  text-align: center
+  display: inline-block
+
+  p
+    color: #ffffff
+    margin-bottom: 5px
+    margin-top: 3px
+    font-size: 14px
+    position: static
+    font-family: 'georgiaitalic'
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: inline-block
+
+    li
+      float: left
+      margin: 0 10px
+      text-align: center
+      position: relative
+
+      span
+        position: relative
+        +text-shadow(1px 1px 1px rgb(0, 0, 0))
+        display: block
+        font-size: 36px
+        width: 50px
+        height: 60px
+        +box
+        padding-top: 5px
+        padding-right: 2px
+        font-family: 'conv_pfdintextcondpro-thin'
+        color: white
+        +border-radius(4px)
+        +background-clip(padding-box)
+        background-color: #1d1d1d
+        +box-shadow(inset 0 -4px 0 rgba(0,0,0,.7))
+        +background-image(linear-gradient(to bottom, #595959 0%, #bdbdbd 40%, #131313 60%, #595959 100%))
+        &:after
+          position: absolute
+          content: ""
+          top: 26px
+          left: 0
+          width: 100%
+          height: 5px
+          +opacity(.7)
+          +background-image(linear-gradient(bottom, #000 0%, rgba(0,0,0,0) 100%))
+          +box
+
+
+.form__out
+  width: 380px
+  height: 500px
+  +box
+  +clr
+  border: solid 5px rgba(#595959, .3)
+  padding: 5px
+.form
+  width: 360px
+  height: 480px
+  position: relative
+  +box
+  .caption
+    box-sizing: border-box
+    height: 230px
+    padding-top: 30px
+    background: #000000
+    text-align: center
+    h3
+      margin-top: 0
+      margin-bottom: 0
+      font-size: 36px
+      font-weight: normal
+      text-align: center
+      font-family: 'Conv_PFDinTextCondPro-Thin'
+      color: #ffffff
+      text-transform: uppercase
+      line-height: 1em
+    h4
+      margin-top: 0
+      margin-bottom: 15px
+      font-size: 18px
+      text-align: center
+      font-weight: normal
+      text-transform: uppercase
+      font-family: 'Conv_pfdintextcondpro-light'
+      color: #ffffff
+      line-height: 1em
+
+
+.frm
+  height: 250px
+  padding-top: 30px
+  background: rgba(#3b3b3b, .4)
+
+  //box-sizing: border-box
+  +box
+
+  h4
+    text-align: center
+    color: #ffffff
+    margin: 5px 0 0
+    font-weight: normal
+    font-family: 'Conv_pfdintextcondpro-light'
+    font-size: 18px
+  h5
+    @extend h4
+    margin: 0
+    font-size: 24px
+    span
+      font-family: 'conv_pfdintextcondpro-regular'
+form
+  margin-top: -10px
+  position: relative
+  input
+    padding-left: 20px
+    width: 280px
+    height: 50px
+    background: #ffffff
+    display: block
+    margin: auto auto 20px
+    +box
+    font-size: 18px
+    border: 2px solid #dbdbdb
+    +border-radius(4px)
+    +background-clip(padding-box)
+
+
+
+
+.button
+  +box
+  +border-radius(4px)
+  width: 280px
+  height: 70px
+  color: #d2b978
+  +single-text-shadow
+  display: block
+  margin: 20px auto auto
+  font-family: 'pf_highway_sans_probold'
+  font-size: 36px
+  background: url(../img/button-form_bg.png) no-repeat
+  letter-spacing: 1px
+  text-decoration: none
+
+  &:hover
+    +box-shadow(inset 0 0 5px 2px #d2b978)
+// common blocks
+
+.button--video
+  background: url(../img/button-video_bg.png) no-repeat
+  width: 190px
+  height: 50px
+  +pfl
+  font-size: 18px
+  color: #554628
+  text-transform: uppercase
+  text-align: center
+  padding-top: 14px
+  +box
+  margin-top: 0
+  margin-left: 36px
+.button--specs
+  background: url(../img/specs-button_bg.png)
+  width: 240px
+  height: 70px
+  color: #1e1e1e
+  font-size: 36px
+  font-family: 'pf_highway_sans_probold'
+  +box
+  display: block
+  text-align: center
+  padding-top: 10px
+
+.button--red
+  margin-top: 25px
+  font-size: 24px
+  display: inline-block
+  padding: 20px 71px
+  border: none
+  font-family: 'pf_highway_sans_probold'
+  color: #1e1e1e
+  +border-radius(4px)
+  +background-clip(padding-box)
+  +box-shadow(inset 0 -4px 0 rgba(150,110,90,.45))
+  +background-image(linear-gradient(bottom, #d1956d 0%, #f9c7a9 30.73%, #c78163 100%))
+
+
+
+
+  &:hover
+    background: lighten(#c78163, 10%)
+    +box-shadow(0 0 0 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
